@@ -1,22 +1,29 @@
 function calculatePrice() {
   const age = parseInt(document.getElementById('ageInput').value);
   const isStudent = document.getElementById('isStudent').checked;
-  const outputDiv = document.getElementById('priceOutput');
-  const regular_price = 800;
-  let result = '';
+  const output = document.getElementById('priceOutput');
+  const base = 800;
+  let msg;
 
   if (isNaN(age)) {
-    result = '❌ Please enter a valid age.';
+    msg = '❌ Please enter a valid age.';
+    output.className = 'alert alert-danger text-center';
   } else if (age < 10) {
-    result = '🎉 Free Ticket!';
+    msg = '🎉 Free Ticket!';
+    output.className = 'alert alert-success text-center';
   } else if (isStudent) {
-    result = `🎓 Price: ${regular_price * 0.5} BDT (50% student discount)`;
+    msg = `🎓 Price: ${base * 0.5} BDT (50% student discount)`;
+    output.className = 'alert alert-warning text-center';
   } else if (age >= 60) {
-    result = `🧓 Price: ${regular_price * 0.85} BDT (15% senior discount)`;
+    msg = `🧓 Price: ${base * 0.85} BDT (15% senior discount)`;
+    output.className = 'alert alert-warning text-center';
   } else {
-    result = `💰 Price: ${regular_price} BDT`;
+    msg = `💰 Price: ${base} BDT`;
+    output.className = 'alert alert-info text-center';
   }
 
-  outputDiv.innerText = result;
-  outputDiv.classList.remove('d-none');
+  output.innerText = msg;
+  output.classList.add('show');
+  output.classList.remove('d-none');
 }
+document.getElementById('checkBtn').addEventListener('click', calculatePrice);

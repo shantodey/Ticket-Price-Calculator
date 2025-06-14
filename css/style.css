@@ -1,26 +1,31 @@
 body {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/img/background.jpg') no-repeat center center fixed;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('/img/background.jpg') no-repeat center center fixed;
   background-size: cover;
 }
-
+.title{
+  color: white;
+}
 .bg-glass {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
   border-radius: 15px;
   backdrop-filter: blur(10px);
-  color: white;
 }
-
-.form-control {
-  background-color: transparent;
-  color: white;
-  border: 1px solid #ccc;
+.btn-outline-light {
+  color: #fff;
+  border-color: rgba(255,255,255,0.6);
 }
-
-.form-control::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+.btn-outline-light.active,
+.btn-outline-light:active {
+  background-color: rgba(255,255,255,0.2);
 }
-
-.form-check-label {
-  cursor: pointer;
+#priceOutput {
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#priceOutput.show {
+  opacity: 1;
+  transform: translateY(0);
 }
