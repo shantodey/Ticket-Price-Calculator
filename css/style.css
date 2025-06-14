@@ -1,6 +1,5 @@
 body {
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-    url('/img/background.jpg') no-repeat center center fixed;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url('/img/background.jpg') no-repeat center center fixed;
   background-size: cover;
 }
 .title{
